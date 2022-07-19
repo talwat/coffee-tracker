@@ -1,0 +1,7 @@
+{
+  "cSpell.words": ["Cortado", "sveltejs", "Typecheck"],
+  "cSpell.enableFiletypes": ["!json", "!yml", "!yaml"],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/tal/Code/svelte-template/.github/workflows/deploy.yml"
+  }
+}
