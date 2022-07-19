@@ -76,6 +76,7 @@
     padding: 8px;
     padding-top: 6px;
     font-size: 18px;
+    margin: 0;
 
     width: 100%;
   }
