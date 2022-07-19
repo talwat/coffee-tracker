@@ -69,7 +69,10 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
-    height: 100%;
+
+    height: 100vh;
+    /* mobile viewport bug fix */
+    max-height: -webkit-fill-available;
 
     justify-content: space-between;
   }
