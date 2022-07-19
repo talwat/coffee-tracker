@@ -107,7 +107,7 @@
     gap: 0px;
     margin-top: 6px;
     overflow-y: auto;
-    max-height: 50%;
+    max-height: calc(50vh - 48px);
 
     width: 100%;
   }

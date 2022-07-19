@@ -1,17 +1,22 @@
 <script lang="ts">
-  import Popup from "./Popup.svelte";
   import CoffeeList from "./CoffeeList.svelte";
   import MaxCoffee from "./MaxCoffee.svelte";
   import Footer from "./Footer.svelte";
+  import Popup from "./assets/Popup.svelte";
+  import Add from "./Add.svelte";
 
   import { onMount } from "svelte";
 
-  import { day, popup } from "./ts/stores";
+  import { day } from "./ts/stores";
   import { now, getComparableDate } from "./ts/dateUtils";
   import { type Cup, getCupDate } from "./ts/cup";
 
+  let intro: boolean = false;
+
   // Set day if it's undefined
   if ($day == undefined) {
+    setTimeout(() => (intro = true), 300);
+
     day.set({
       cups: [],
       max: 2,
@@ -59,8 +64,22 @@
   <MaxCoffee />
   <Footer />
 </div>
-{#if $popup}
-  <Popup />
+
+<Add />
+
+{#if intro}
+  <Popup
+    title="Intro"
+    options={[
+      {
+        name: "Okay",
+        function: () => (intro = false),
+      },
+    ]}
+    >Click the + to add coffee.
+    <br />
+    Change your coffee limit by clicking the buttons.</Popup
+  >
 {/if}
 
 <style>

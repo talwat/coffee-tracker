@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { popup } from "./ts/stores";
+  import { addMenu } from "./ts/stores";
 </script>
 
 <div class="footer">
   <button
     class="empty-button"
     on:click={() => {
-      popup.set(true);
+      addMenu.set(true);
     }}><img height="42px" src="svg/plus.svg" alt="Plus" /></button
   >
 </div>

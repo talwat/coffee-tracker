@@ -18,4 +18,4 @@ day.subscribe(
 );
 
 export const coffeeType: Writable<Coffee> = writable();
-export const popup: Writable<boolean> = writable();
+export const addMenu: Writable<boolean> = writable();

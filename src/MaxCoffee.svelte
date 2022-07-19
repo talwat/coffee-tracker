@@ -40,7 +40,7 @@
 
 <style>
   p {
-    font-size: 22px;
+    font-size: 28px;
   }
 
   .red {
@@ -65,7 +65,7 @@
     color: white;
     border-radius: 8px;
     padding: 4px;
-    font-size: 18px;
+    font-size: 22px;
     margin: 4px;
   }
 
