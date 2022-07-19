@@ -19,38 +19,32 @@
   }
 </script>
 
-<main>
-  <div class="input-container">
-    <label for={id}><slot /></label>
-    {#if variable}
-      <button
-        type="checkbox"
-        {id}
-        name={id}
-        value={capitalizeFirstLetter(id)}
-        class="checkbox checkbox-ticked empty-button"
-        on:click={toggle}
-      >
-        <img
-          height="20px"
-          src="svg/checkbox-ticked.svg"
-          alt="checkbox"
-        /></button
-      >
-    {:else}
-      <button
-        type="checkbox"
-        {id}
-        name={id}
-        value={capitalizeFirstLetter(id)}
-        class="checkbox checkbox-unticked empty-button"
-        on:click={toggle}
-      >
-        <img height="20px" src="svg/checkbox.svg" alt="checkbox" /></button
-      >
-    {/if}
-  </div>
-</main>
+<div class="input-container">
+  <label for={id}><slot /></label>
+  {#if variable}
+    <button
+      type="checkbox"
+      {id}
+      name={id}
+      value={capitalizeFirstLetter(id)}
+      class="checkbox checkbox-ticked empty-button"
+      on:click={toggle}
+    >
+      <img height="20px" src="svg/checkbox-ticked.svg" alt="checkbox" /></button
+    >
+  {:else}
+    <button
+      type="checkbox"
+      {id}
+      name={id}
+      value={capitalizeFirstLetter(id)}
+      class="checkbox checkbox-unticked empty-button"
+      on:click={toggle}
+    >
+      <img height="20px" src="svg/checkbox.svg" alt="checkbox" /></button
+    >
+  {/if}
+</div>
 
 <style>
   .checkbox {

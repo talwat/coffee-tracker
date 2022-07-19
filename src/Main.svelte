@@ -54,24 +54,23 @@
   }
 </script>
 
-<main>
-  <div class="master">
-    <CoffeeList />
-    <MaxCoffee />
-    <Footer />
-  </div>
-  {#if $popup}
-    <Popup />
-  {/if}
-</main>
+<div class="master">
+  <CoffeeList />
+  <MaxCoffee />
+  <Footer />
+</div>
+{#if $popup}
+  <Popup />
+{/if}
 
 <style>
   .master {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-items: center;
-    height: 100vh;
+    align-items: stretch;
+    height: 100%;
+
     justify-content: space-between;
   }
 </style>

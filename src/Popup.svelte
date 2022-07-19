@@ -34,27 +34,25 @@
 
 <svelte:window bind:innerHeight />
 
-<main>
-  <div class="shade" transition:fade={{ duration: 500 }} />
-  <div
-    class="popup"
-    transition:fly={{ y: innerHeight, duration: 500, opacity: 1 }}
-  >
-    <div class="popup-head">
-      <button
-        class="empty-button blue-text-btn"
-        on:click={() => {
-          popup.set(false);
-        }}>Cancel</button
-      >
-      <p class="popup-head-text">New Coffee</p>
-      <button class="empty-button blue-text-btn" on:click={addCup}>Done</button>
-    </div>
-    <CoffeeTypePicker />
-    <Checkbox id="decaf" bind:variable={decaf}>Decaf</Checkbox>
-    <Checkbox id="ice" bind:variable={ice}>Ice</Checkbox>
+<div class="shade" transition:fade={{ duration: 500 }} />
+<div
+  class="popup"
+  transition:fly={{ y: innerHeight, duration: 500, opacity: 1 }}
+>
+  <div class="popup-head">
+    <button
+      class="empty-button blue-text-btn"
+      on:click={() => {
+        popup.set(false);
+      }}>Cancel</button
+    >
+    <p class="popup-head-text">New Coffee</p>
+    <button class="empty-button blue-text-btn" on:click={addCup}>Done</button>
   </div>
-</main>
+  <CoffeeTypePicker />
+  <Checkbox id="decaf" bind:variable={decaf}>Decaf</Checkbox>
+  <Checkbox id="ice" bind:variable={ice}>Ice</Checkbox>
+</div>
 
 <style>
   .shade {

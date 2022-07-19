@@ -2,16 +2,14 @@
   import { popup } from "./ts/stores";
 </script>
 
-<main>
-  <div class="footer">
-    <button
-      class="empty-button"
-      on:click={() => {
-        popup.set(true);
-      }}><img height="42px" src="svg/plus.svg" alt="Plus" /></button
-    >
-  </div>
-</main>
+<div class="footer">
+  <button
+    class="empty-button"
+    on:click={() => {
+      popup.set(true);
+    }}><img height="42px" src="svg/plus.svg" alt="Plus" /></button
+  >
+</div>
 
 <style>
   .footer {
@@ -23,7 +21,7 @@
     padding: 10px;
     gap: 10px;
 
-    width: 100vw;
+    width: 100%;
     height: 75px;
 
     background: rgba(229, 229, 234, 0.1);

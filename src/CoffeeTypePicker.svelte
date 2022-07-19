@@ -3,41 +3,30 @@
   import { coffeeType } from "./ts/stores";
 </script>
 
-<main>
-  <div class="coffee-type-picker">
-    {#each CoffeeList.sort() as coffee, i}
-      {#if coffee == $coffeeType}
-        {#if i <= 0}
-          <button
-            class="coffee-type-option coffee-type-option-selected coffee-type-option-selected-top empty-button"
-            on:click={() => {
-              coffeeType.set(coffee);
-            }}
-          >
-            {coffee}
-          </button>
-        {:else if i === CoffeeList.length - 1}
-          <button
-            class="coffee-type-option coffee-type-option-selected coffee-type-option-selected-bottom empty-button"
-            on:click={() => {
-              coffeeType.set(coffee);
-            }}
-          >
-            {coffee}
-          </button>
-        {:else}
-          <button
-            class="coffee-type-option-selected coffee-type-option empty-button"
-            on:click={() => {
-              coffeeType.set(coffee);
-            }}
-          >
-            {coffee}
-          </button>
-        {/if}
+<div class="coffee-type-picker">
+  {#each CoffeeList.sort() as coffee, i}
+    {#if coffee == $coffeeType}
+      {#if i <= 0}
+        <button
+          class="coffee-type-option coffee-type-option-selected coffee-type-option-selected-top empty-button"
+          on:click={() => {
+            coffeeType.set(coffee);
+          }}
+        >
+          {coffee}
+        </button>
+      {:else if i === CoffeeList.length - 1}
+        <button
+          class="coffee-type-option coffee-type-option-selected coffee-type-option-selected-bottom empty-button"
+          on:click={() => {
+            coffeeType.set(coffee);
+          }}
+        >
+          {coffee}
+        </button>
       {:else}
         <button
-          class="coffee-type-option empty-button"
+          class="coffee-type-option-selected coffee-type-option empty-button"
           on:click={() => {
             coffeeType.set(coffee);
           }}
@@ -45,16 +34,25 @@
           {coffee}
         </button>
       {/if}
-      {#if i < CoffeeList.length - 1}
-        {#if CoffeeList[i + 1] === $coffeeType || CoffeeList[i] === $coffeeType}
-          <div class="separator separator-wide" />
-        {:else}
-          <div class="separator" />
-        {/if}
+    {:else}
+      <button
+        class="coffee-type-option empty-button"
+        on:click={() => {
+          coffeeType.set(coffee);
+        }}
+      >
+        {coffee}
+      </button>
+    {/if}
+    {#if i < CoffeeList.length - 1}
+      {#if CoffeeList[i + 1] === $coffeeType || CoffeeList[i] === $coffeeType}
+        <div class="separator separator-wide" />
+      {:else}
+        <div class="separator" />
       {/if}
-    {/each}
-  </div>
-</main>
+    {/if}
+  {/each}
+</div>
 
 <style>
   .coffee-type-option-selected {

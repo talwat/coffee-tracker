@@ -22,4 +22,21 @@
     background-color: transparent;
     border: 0;
   }
+  :global(.app) {
+    height: 100%;
+  }
+
+  :global(body) {
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+  }
+
+  :global(html) {
+    height: -webkit-fill-available;
+  }
+
+  :global(main) {
+    height: 100%;
+  }
 </style>

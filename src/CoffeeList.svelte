@@ -48,7 +48,12 @@
       </div>
       <div class="left-items">
         <p class="added-at">{getCupTime(cup)}</p>
-        <button class="empty-button x-btn" on:click={() => {remove(i)}}>
+        <button
+          class="empty-button x-btn"
+          on:click={() => {
+            remove(i);
+          }}
+        >
           <img height="32px" src="svg/x.svg" alt="X" />
         </button>
       </div>
