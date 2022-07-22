@@ -5,14 +5,19 @@
   import type { Writable } from "svelte/store";
 
   let innerHeight: number = 0;
+  let isCancelled = true;
 
   export let store: Writable<boolean>;
   export let heading: string;
   export let doneFunction: () => void;
 
-  function done() {
-    doneFunction();
+  function close() {
     store.set(false);
+  }
+
+  function done() {
+    isCancelled = false;
+    close();
   }
 </script>
 
@@ -23,14 +28,14 @@
 <div
   class="menu"
   transition:fly={{ y: innerHeight, duration: 500, opacity: 1 }}
+  on:outroend={() => {
+    if (!isCancelled) {
+      doneFunction();
+    }
+  }}
 >
   <div class="menu-head">
-    <button
-      class="empty-button blue-text-btn"
-      on:click={() => {
-        store.set(false);
-      }}>Cancel</button
-    >
+    <button class="empty-button blue-text-btn" on:click={close}>Cancel</button>
     <p class="menu-head-text">{heading}</p>
     <button class="empty-button blue-text-btn" on:click={done}>Done</button>
   </div>

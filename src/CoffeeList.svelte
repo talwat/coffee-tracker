@@ -31,7 +31,7 @@
   {#each $day.cups as cup, i (cup)}
     <div
       class="coffee"
-      in:slide={{ delay: 550, duration: 500 }}
+      in:slide={{ duration: 500 }}
       out:slide={{ duration: 500 }}
     >
       <div class="text-and-icon">

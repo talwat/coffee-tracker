@@ -4,23 +4,25 @@
 </script>
 
 <div class="max-coffee-display">
-  {#if $day.cups.length > $day.max}
-    <div class="max-coffee-text">
-      <p class="max-coffee-p red">{$day.cups.length}/{$day.max}</p>
-    </div>
-    <p class="status-text">Stop drinking</p>
-  {:else}
-    <div class="max-coffee-text">
-      {#key $day.cups.length}
-        <p class="max-coffee-p" in:fly={{ y: -20 }}>{$day.cups.length}</p>
-      {/key}
-      <p class="max-coffee-p">/</p>
-      {#key $day.max}
-        <p class="max-coffee-p" in:fly={{ y: -20 }}>{$day.max}</p>
-      {/key}
-    </div>
-    <p class="status-text">Good</p>
-  {/if}
+  <div
+    class={$day.cups.length > $day.max
+      ? "red max-coffee-p max-coffee-text"
+      : "max-coffee-p max-coffee-text"}
+  >
+    {#key $day.cups.length}
+      <p in:fly={{ y: -20 }}>
+        {$day.cups.length}
+      </p>
+    {/key}
+    <p>/</p>
+    {#key $day.max}
+      <p in:fly={{ y: -20 }}>
+        {$day.max}
+      </p>
+    {/key}
+  </div>
+  <p class="status-text">Good</p>
+
   <p class="max-control-p">Max</p>
   <div class="max-control">
     <button
@@ -79,7 +81,7 @@
     justify-content: center;
     align-items: center;
   }
-  .max-coffee-p {
+  .max-coffee-p > p {
     border: 0;
     margin: 0;
     padding: 0;
