@@ -68,6 +68,8 @@
     text-align: center;
     margin-top: 2px;
     margin-bottom: 18px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .title {

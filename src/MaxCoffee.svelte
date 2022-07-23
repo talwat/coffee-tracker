@@ -21,7 +21,9 @@
       </p>
     {/key}
   </div>
-  <p class="status-text">Good</p>
+  <p class="status-text">
+    {$day.cups.length >= $day.max ? "Stop drinking" : "You're all good!"}
+  </p>
 
   <p class="max-control-p">Max</p>
   <div class="max-control">

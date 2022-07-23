@@ -7,15 +7,13 @@
 
   import { onMount } from "svelte";
 
-  import { day } from "./ts/stores";
+  import { day, intro } from "./ts/stores";
   import { now, getComparableDate } from "./ts/dateUtils";
   import { type Cup, getCupDate } from "./ts/cup";
 
-  let intro: boolean = false;
-
   // Set day if it's undefined
   if ($day == undefined) {
-    setTimeout(() => (intro = true), 300);
+    setTimeout(() => intro.set(true), 300);
 
     day.set({
       cups: [],
@@ -67,19 +65,23 @@
 
 <Add />
 
-{#if intro}
+{#if $intro}
   <Popup
     title="Intro"
     options={[
       {
         name: "Okay",
-        function: () => (intro = false),
+        function: () => intro.set(false),
       },
     ]}
-    >Click the + to add coffee.
-    <br />
-    Change your coffee limit by clicking the buttons.</Popup
   >
+    Hi there! Welcome to this app, it will help control your coffee consumption.
+    <br /> <br />
+    Please set your coffee limit by clicking the 'lower' and 'raise' buttons.
+    <br /> <br />
+    Then, whenever you drink a coffee, click the + to add coffee to the app, picking
+    which coffee you had, and pressing 'Done'.
+  </Popup>
 {/if}
 
 <style>

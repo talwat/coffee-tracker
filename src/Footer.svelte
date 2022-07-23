@@ -1,14 +1,23 @@
 <script lang="ts">
-  import { addMenu } from "./ts/stores";
+  import FooterButton from "./assets/FooterButton.svelte";
+  import { addMenu, intro } from "./ts/stores";
 </script>
 
 <div class="footer">
-  <button
-    class="empty-button"
+  <FooterButton
     on:click={() => {
       addMenu.set(true);
-    }}><img height="42px" src="svg/plus.svg" alt="Plus" /></button
-  >
+    }}
+    src="svg/plus.svg"
+    alt="Add Coffee"
+  />
+  <FooterButton
+    on:click={() => {
+      intro.set(true);
+    }}
+    src="svg/help.svg"
+    alt="Help"
+  />
 </div>
 
 <style>
