@@ -11,6 +11,10 @@
   import { now, getComparableDate } from "./ts/dateUtils";
   import { type Cup, getCupDate } from "./ts/cup";
 
+  // Fix viewport on mobile
+  let vh = window.innerHeight;
+  document.documentElement.style.setProperty("--vw-full", `${vh}px`);
+
   // Set day if it's undefined
   if ($day == undefined) {
     setTimeout(() => intro.set(true), 300);
@@ -92,8 +96,7 @@
     align-items: stretch;
 
     height: 100vh;
-    /* mobile viewport bug fix */
-    max-height: -webkit-fill-available;
+    height: var(--vw-full);
 
     justify-content: space-between;
   }

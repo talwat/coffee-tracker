@@ -71,7 +71,7 @@
 
     position: absolute;
     width: 100vw;
-    height: calc(100vh - 24px);
+    height: calc(100% - 24px);
     left: 0px;
     top: 25px;
 
