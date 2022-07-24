@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { day } from "./ts/stores";
+  import { day, max } from "./ts/stores";
   import { fly } from "svelte/transition";
 </script>
 
 <div class="max-coffee-display">
   <div
-    class={$day.cups.length > $day.max
+    class={$day.cups.length > $max
       ? "red max-coffee-p max-coffee-text"
       : "max-coffee-p max-coffee-text"}
   >
@@ -15,14 +15,14 @@
       </p>
     {/key}
     <p>/</p>
-    {#key $day.max}
+    {#key $max}
       <p in:fly={{ y: -20 }}>
-        {$day.max}
+        {$max}
       </p>
     {/key}
   </div>
   <p class="status-text">
-    {$day.cups.length >= $day.max ? "Stop drinking" : "You're all good!"}
+    {$day.cups.length >= $max ? "Stop drinking" : "You're all good!"}
   </p>
 
   <p class="max-control-p">Max</p>
@@ -30,13 +30,13 @@
     <button
       class="max-control-btn"
       on:click={() => {
-        if ($day.max > 0) $day.max--;
+        if ($max > 0) $max--;
       }}>Lower</button
     >
     <button
       class="max-control-btn"
       on:click={() => {
-        $day.max++;
+        $max++;
       }}>Raise</button
     >
   </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Shade from "./Shade.svelte";
 
-  import { fly, scale } from "svelte/transition";
+  import { fly } from "svelte/transition";
   import type { Writable } from "svelte/store";
 
   let innerHeight: number = 0;

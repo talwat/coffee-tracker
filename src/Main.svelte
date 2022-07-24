@@ -7,7 +7,7 @@
 
   import { onMount } from "svelte";
 
-  import { day, intro } from "./ts/stores";
+  import { day, intro, max, firstTime } from "./ts/stores";
   import { now, getComparableDate } from "./ts/dateUtils";
   import { type Cup, getCupDate } from "./ts/cup";
 
@@ -15,35 +15,20 @@
   let vh = window.innerHeight;
   document.documentElement.style.setProperty("--vw-full", `${vh}px`);
 
-  // Set day if it's undefined
-  if ($day == undefined) {
-    setTimeout(() => intro.set(true), 300);
-
-    day.set({
-      cups: [],
-      max: 2,
-    });
-  }
-
   onMount(() => {
+    // Check if user is visiting for the first time
+    if ($firstTime) {
+      setTimeout(() => intro.set(true), 300);
+
+      firstTime.set(false);
+    }
+
     setInterval(function () {
       clearCups();
     }, 1000 * 60); // 1 minute
 
     clearCups();
   });
-
-  /**
-   * Set `day.cups`
-   *
-   * @param {Cup[]} cups Value to set
-   */
-  function setCups(cups: Cup[]): void {
-    day.set({
-      max: $day.max,
-      cups: cups,
-    });
-  }
 
   /**
    * Clear all cups which have not been created today
@@ -55,7 +40,8 @@
 
       // Compare dates to check wether to remove cup
       if (getComparableDate(cupDate) !== getComparableDate(now())) {
-        setCups($day.cups.splice(i, 0));
+        $day.cups.splice(i, 1);
+        $day.cups = $day.cups;
       }
     }
   }
