@@ -9,12 +9,18 @@
    * Scrolls to the bottom of the coffee list
    */
   window.coffeeScroll = () => {
+    if (coffeeDisplay.clientHeight < window.innerHeight / 2 - 64) {
+      return;
+    }
+
+    console.log("scroll")
+
     setTimeout(() => {
       coffeeDisplay.scroll({
         top: coffeeDisplay.scrollHeight,
         behavior: "smooth",
       });
-    }, 1300);
+    }, 700);
   };
 
   /**
@@ -31,8 +37,7 @@
   {#each $day.cups as cup, i (cup)}
     <div
       class="coffee"
-      in:slide={{ duration: 500 }}
-      out:slide={{ duration: 500 }}
+      transition:slide={{ duration: 500 }}
     >
       <div class="text-and-icon">
         <img height="42px" src="svg/cup.svg" alt="Coffee Cup" />
@@ -64,6 +69,7 @@
 <style>
   p {
     font-size: 22px;
+    margin: 0;
   }
 
   .text-and-icon {
@@ -107,7 +113,7 @@
     gap: 0px;
     margin-top: 6px;
     overflow-y: auto;
-    max-height: calc(50% - 48px);
+    max-height: calc(50%);
 
     width: 100%;
   }

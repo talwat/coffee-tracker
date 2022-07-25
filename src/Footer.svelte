@@ -1,6 +1,7 @@
 <script lang="ts">
   import FooterButton from "./assets/FooterButton.svelte";
-  import { addMenu, intro } from "./ts/stores";
+  import { addMenu, intro, lightMode } from "./ts/stores";
+  import { draw, fade } from "svelte/transition";
 </script>
 
 <div class="footer">
@@ -18,6 +19,16 @@
     src="svg/help.svg"
     alt="Help"
   />
+  <button class="empty-button" on:click={() => lightMode.set(!$lightMode)}>
+    {#key $lightMode}
+      <img
+        in:fade={{ duration: 200 }}
+        height="42px"
+        src={$lightMode ? "svg/moon.svg" : "svg/sun.svg"}
+        alt="Light Mode Toggle"
+      />
+    {/key}
+  </button>
 </div>
 
 <style>
