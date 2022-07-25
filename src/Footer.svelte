@@ -33,7 +33,7 @@
     width: 100%;
     height: 75px;
 
-    background: rgba(229, 229, 234, 0.1);
-    border-top: 1px solid #d1d1d6;
+    background: var(--bg-4);
+    border-top: 1px solid var(--bg-3);
   }
 </style>

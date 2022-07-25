@@ -2,9 +2,8 @@
   import type { Writable } from "svelte/store";
   import Line from "./Line.svelte";
 
-  /* eslint-disable */
-  export let items: Array<any>;
-  export let toSet: Writable<any>;
+  export let items: string[];
+  export let toSet: Writable<string>;
 </script>
 
 <div class="picker">
@@ -24,7 +23,7 @@
       {#if items[i + 1] === $toSet || items[i] === $toSet}
         <Line wide />
       {:else}
-        <Line />
+        <Line padding={20} />
       {/if}
     {/if}
   {/each}
@@ -32,17 +31,21 @@
 
 <style>
   .option-selected {
-    background-color: #d1d1d6 !important;
+    background-color: var(--bg-3) !important;
   }
 
   .option {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 8px;
-    padding-top: 6px;
+    padding: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     font-size: 18px;
     margin: 0;
+    color: inherit;
+    transition: background-color 0.2s;
+    background-color: var(--bg-5);
 
     width: 100%;
   }
@@ -55,7 +58,7 @@
 
     width: calc(100%);
 
-    background: #f2f2f7;
+    background: var(--bg-5);
     border-radius: 12px;
   }
 </style>

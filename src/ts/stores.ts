@@ -30,7 +30,8 @@ function persistentWritable<T extends boolean | string | number>(
 
 export const max: Writable<number> = persistentWritable(2, "max");
 export const lightMode: Writable<boolean> = persistentWritable(
-    true,
+    window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: light)").matches,
     "lightMode"
 );
 export const firstTime: Writable<boolean> = persistentWritable(

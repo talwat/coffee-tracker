@@ -93,7 +93,7 @@
     justify-content: space-between;
     padding: 12px;
     height: 32px;
-    background: #f2f2f7;
+    background: var(--bg-5);
     border-radius: 12px;
     margin-top: 6px;
     margin-bottom: 6px;

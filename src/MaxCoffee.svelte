@@ -48,7 +48,7 @@
   }
 
   .red {
-    color: #ff3b30;
+    color: var(--red);
   }
 
   .max-control {
@@ -65,7 +65,7 @@
 
   .max-control-btn {
     border: 0;
-    background-color: #007ae1;
+    background-color: var(--blue);
     color: white;
     border-radius: 8px;
     padding: 4px;
@@ -74,7 +74,7 @@
   }
 
   .max-control-btn:active {
-    background-color: rgb(88, 86, 214);
+    background-color: var(--indigo);
   }
 
   .max-coffee-text {

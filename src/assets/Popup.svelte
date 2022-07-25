@@ -33,16 +33,16 @@
 <style>
   .vertical-seperator {
     width: 1px;
-    background-color: #d1d1d6;
+    background-color: var(--bg-3);
   }
   .option {
     font-size: 18px;
     padding: 12px;
     flex-grow: 1;
-    color: #007ae1;
+    color: var(--blue);
   }
   .option:active {
-    background-color: #d1d1d6;
+    background-color: var(--bg-3);
   }
   .options {
     display: flex;
@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: #e5e5ea;
+    background-color: var(--bg-4);
     width: 70%;
     position: fixed;
     left: 50%;

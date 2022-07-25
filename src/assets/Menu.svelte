@@ -57,7 +57,7 @@
   }
 
   .blue-text-btn {
-    color: #007ae1;
+    color: var(--blue);
     font-size: 22px;
   }
 
@@ -75,7 +75,7 @@
     left: 0px;
     top: 25px;
 
-    background: #e5e5ea;
+    background: var(--bg-4);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
   }

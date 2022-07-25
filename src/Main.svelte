@@ -7,15 +7,26 @@
 
   import { onMount } from "svelte";
 
-  import { day, intro, max, firstTime } from "./ts/stores";
+  import { day, intro, lightMode, firstTime } from "./ts/stores";
   import { now, getComparableDate } from "./ts/dateUtils";
   import { type Cup, getCupDate } from "./ts/cup";
 
-  // Fix viewport on mobile
-  let vh = window.innerHeight;
-  document.documentElement.style.setProperty("--vw-full", `${vh}px`);
+  /**
+   * Sets --vw-full css variable
+   */
+  function setVwFull(): void {
+    document.documentElement.style.setProperty(
+      "--vw-full",
+      `${window.innerHeight}px`
+    );
+  }
 
   onMount(() => {
+    // Fix viewport on mobile
+    setVwFull();
+
+    onresize = () => setVwFull();
+
     // Check if user is visiting for the first time
     if ($firstTime) {
       setTimeout(() => intro.set(true), 300);
@@ -45,6 +56,32 @@
       }
     }
   }
+
+  /* LIGHT/DARK MODE */
+
+  /**
+   * Toggles light and dark mode based on a value
+   * @param {boolean} lightMode Wether light mode is supposed to be enabled
+   */
+  function toggleLightMode(lightMode: boolean): void {
+    if (lightMode) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }
+
+  // Subscribe lightMode to toggle whenever changed
+  lightMode.subscribe(value => {
+    toggleLightMode(value);
+  });
+
+  // Set lightMode whenever preference is changed in system settings
+  window
+    .matchMedia("(prefers-color-scheme: light)")
+    .addEventListener("change", event => {
+      lightMode.set(event.matches);
+    });
 </script>
 
 <div class="master">
