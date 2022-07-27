@@ -66,7 +66,7 @@
   .max-control-btn {
     border: 0;
     background-color: var(--blue);
-    color: white;
+    color: #fff;
     border-radius: 8px;
     padding: 4px;
     font-size: 22px;

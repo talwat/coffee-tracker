@@ -36,15 +36,14 @@
 
     --fg: white;
   }
-  * {
+  :global(*) {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
     color: var(--fg);
-    transition: background-color 0.3s;
-    transition: color 0.3s;
+    transition: background-color 0.2s, color 0.2s;
   }
-  :global(html),
-  :global(body) {
+
+  :global(body, html) {
     margin: 0;
     height: 100%;
     overflow: hidden;

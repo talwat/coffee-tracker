@@ -118,6 +118,8 @@
     flex-wrap: nowrap;
     align-items: stretch;
 
+    background: var(--bg-4);
+
     height: 100vh;
     height: var(--vw-full);
 
