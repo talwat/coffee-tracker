@@ -56,8 +56,6 @@
     align-items: center;
     overflow: hidden;
 
-    width: calc(100%);
-
     background: var(--bg-5);
     border-radius: 12px;
   }

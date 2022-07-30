@@ -1,10 +1,9 @@
 <script lang="ts">
-  export let variable: boolean;
+  export let checked: boolean;
   export let id: string;
 
-  function capitalizeFirstLetter(text: string): string {
-    return text.charAt(0).toUpperCase() + text.slice(1);
-  }
+  const capitalizeFirstLetter = (text: string) =>
+    text.charAt(0).toUpperCase() + text.slice(1);
 </script>
 
 <div class="input-container">
@@ -15,11 +14,11 @@
     name={id}
     value={capitalizeFirstLetter(id)}
     class="checkbox empty-button"
-    on:click={() => (variable = !variable)}
+    on:click={() => (checked = !checked)}
   >
     <img
       height="20px"
-      src={variable ? "svg/checkbox-ticked.svg" : "svg/checkbox.svg"}
+      src={checked ? "svg/checkbox-ticked.svg" : "svg/checkbox.svg"}
       alt="checkbox"
     /></button
   >

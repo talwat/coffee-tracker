@@ -11,6 +11,7 @@
     --red: #ff3b30;
     --blue: #007ae1;
     --indigo: #5856d6;
+    --green: rgb(52, 199, 89);
 
     --bg-5: #f2f2f7;
     --bg-4: #e5e5ea;
@@ -26,6 +27,7 @@
     --blue: #0a84ff;
     --indigo: #5e5ce6;
     --red: #ff453a;
+    --green: rgb(48, 209, 88);
 
     --bg-5: #2c2c2e;
     --bg-4: #1c1c1e;

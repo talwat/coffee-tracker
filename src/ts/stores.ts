@@ -1,5 +1,5 @@
 import { writable, type Writable } from "svelte/store";
-import type { Coffee } from "./cup";
+import { CoffeeList, type Coffee } from "./cup";
 import type { Day } from "./day";
 
 export const day: Writable<Day> = writable<Day>(
@@ -39,7 +39,7 @@ export const firstTime: Writable<boolean> = persistentWritable(
     "firstTime"
 );
 
-export const coffeeType: Writable<Coffee> = writable();
+export const coffeeType: Writable<Coffee> = writable(CoffeeList[0]);
 export const addMenu: Writable<boolean> = writable(false);
 export const screenClear: Writable<boolean> = writable(true);
 export const intro: Writable<boolean> = writable(false);

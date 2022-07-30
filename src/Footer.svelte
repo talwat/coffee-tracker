@@ -1,7 +1,7 @@
 <script lang="ts">
   import FooterButton from "./assets/FooterButton.svelte";
   import { addMenu, intro, lightMode } from "./ts/stores";
-  import { draw, fade } from "svelte/transition";
+  import { draw, fade, fly } from "svelte/transition";
   import Line from "./assets/Line.svelte";
 </script>
 
@@ -24,14 +24,11 @@
       alt="Help"
     />
     <button class="empty-button" on:click={() => lightMode.set(!$lightMode)}>
-      {#key $lightMode}
-        <img
-          in:fade={{ duration: 200 }}
-          height="42px"
-          src={$lightMode ? "svg/moon.svg" : "svg/sun.svg"}
-          alt="Light Mode Toggle"
-        />
-      {/key}
+      <img
+        height="42px"
+        src={$lightMode ? "svg/moon.svg" : "svg/sun.svg"}
+        alt="Light Mode Toggle"
+      />
     </button>
   </div>
 </div>
@@ -44,11 +41,16 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    gap: 10px;
+    gap: 24px;
 
     width: 100%;
     height: 75px;
 
     background: var(--bg-4);
+  }
+
+  :global(.footer > button) {
+    margin: 0;
+    padding: 0;
   }
 </style>
