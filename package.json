@@ -12,20 +12,20 @@
     "lint": "eslint src/**/*.svelte src/**/*.ts"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.4",
+    "@sveltejs/vite-plugin-svelte": "^1.0.2",
     "@tsconfig/svelte": "^3.0.0",
+    "svelte": "^3.50.0",
+    "svelte-check": "^2.9.0",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "prettier": "^2.7.1",
+    "prettier-plugin-svelte": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "^8.23.0",
-    "eslint-plugin-svelte3": "^4.0.0",
-    "prettier": "^2.7.1",
-    "prettier-plugin-svelte": "^2.7.0",
-    "svelte": "^3.50.0",
-    "svelte-check": "^2.9.0",
-    "svelte-preprocess": "^4.9.8",
-    "tslib": "^2.3.1",
-    "typescript": "^4.8.2",
-    "vite": "^2.9.14"
+    "eslint-plugin-svelte3": "^4.0.0"
   },
   "dependencies": {
     "@emotion/css": "^11.10.0"

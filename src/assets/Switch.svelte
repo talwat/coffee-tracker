@@ -4,9 +4,9 @@
 </script>
 
 <div class="input-container">
-  <label for="{id}"><slot /></label>
+  <label for={id}><slot /></label>
   <label class="switch">
-    <input id="{id}" type="checkbox" bind:checked />
+    <input {id} type="checkbox" bind:checked />
     <span class="slider" />
   </label>
 </div>

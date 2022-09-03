@@ -13,7 +13,7 @@
       return;
     }
 
-    console.log("scroll")
+    console.log("scroll");
 
     setTimeout(() => {
       coffeeDisplay.scroll({
@@ -35,10 +35,7 @@
 
 <div class="coffee-display" bind:this={coffeeDisplay}>
   {#each $day.cups as cup, i (cup)}
-    <div
-      class="coffee"
-      transition:slide={{ duration: 500 }}
-    >
+    <div class="coffee" transition:slide={{ duration: 500 }}>
       <div class="text-and-icon">
         <img height="42px" src="svg/cup.svg" alt="Coffee Cup" />
         <p class="coffee-type">
