@@ -24,7 +24,7 @@ jobs:
                   wait-interval: 10
 
             - name: "Merge"
-              uses: fastify/github-action-merge-dependabot@v3.2.4
+              uses: fastify/github-action-merge-dependabot@v3.3.0
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   target: minor
