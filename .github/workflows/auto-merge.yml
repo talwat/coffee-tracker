@@ -20,7 +20,7 @@ jobs:
         id: wait-for-build
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: build
+          checkName: CodeQL
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: 'Merge PR'
