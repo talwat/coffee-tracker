@@ -28,6 +28,6 @@
     "eslint-plugin-svelte3": "^4.0.0"
   },
   "dependencies": {
-    "@emotion/css": "^11.10.0"
+    "@emotion/css": "^11.10.5"
   }
 }
