@@ -22,7 +22,7 @@
     "vite": "^3.2.5",
     "prettier": "^2.8.7",
     "prettier-plugin-svelte": "^2.10.0",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.38.0",
     "eslint-plugin-svelte3": "^4.0.0"
